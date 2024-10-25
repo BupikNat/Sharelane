@@ -29,7 +29,6 @@ public class ZipCodeTest {
         browser.quit();
 
     }
-
     @Test
     public void test1() {
 
@@ -52,7 +51,6 @@ public class ZipCodeTest {
         browser.quit();
 
     }
-
     @Test
     public void test2() {
 
@@ -76,7 +74,6 @@ public class ZipCodeTest {
         browser.quit();
 
     }
-
     @Test
     public void test3() {
 
@@ -100,7 +97,6 @@ public class ZipCodeTest {
         browser.quit();
 
     }
-
     @Test
     public void test4() {
 
