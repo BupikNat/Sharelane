@@ -27,8 +27,8 @@ public class ZipCodeTest {
         String errorMessage = browser.findElement(By.cssSelector("[class = error_message]")).getText();
         Assert.assertEquals(errorMessage, "Oops, error on page. ZIP code should have 5 digits");
         browser.quit();
-
     }
+
     @Test
     public void test1() {
 
@@ -49,8 +49,8 @@ public class ZipCodeTest {
         String errorMessage = browser.findElement(By.cssSelector("[class = error_message]")).getText();
         Assert.assertEquals(errorMessage, "Oops, error on page. ZIP code should have 5 digits");
         browser.quit();
-
     }
+
     @Test
     public void test2() {
 
@@ -72,8 +72,8 @@ public class ZipCodeTest {
         String errorMessage = browser.findElement(By.cssSelector("[class = error_message]")).getText();
         Assert.assertEquals(errorMessage, "Oops, error on page. ZIP code should have 5 digits");
         browser.quit();
-
     }
+
     @Test
     public void test3() {
 
@@ -95,8 +95,8 @@ public class ZipCodeTest {
         String errorMessage = browser.findElement(By.cssSelector("[class = error_message]")).getText();
         Assert.assertEquals(errorMessage, "Oops, error on page. ZIP code should have 5 digits");
         browser.quit();
-
     }
+
     @Test
     public void test4() {
 
@@ -106,7 +106,7 @@ public class ZipCodeTest {
         Открыть страницу https://sharelane.com/cgi-bin/register.py
         В поле ZipCode ввести 12345
         Нажать кнопку Continue
-        Проверить что открылась страница ввода имени и электронной почты
+        Проверить появление формы регистрации (по кнопке Register)
         Закрыть браузер
          */
 
@@ -115,9 +115,8 @@ public class ZipCodeTest {
         browser.get("https://sharelane.com/cgi-bin/register.py");
         browser.findElement(By.name("zip_code")).sendKeys("12345");
         browser.findElement(By.cssSelector("[value = Continue]")).click();
-        String currentUrl = browser.getCurrentUrl();
-        String expectedUrl = "https://sharelane.com/cgi-bin/register.py?page=1&zip_code=12345";
+        boolean isDisplay = browser.findElement(By.cssSelector("[value=Register]")).isDisplayed();
+        Assert.assertTrue(isDisplay);
         browser.quit();
-
     }
 }
